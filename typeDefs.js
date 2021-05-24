@@ -6,8 +6,11 @@ const typeDefs=gql `
 
 type Post{
     id:ID
-    title: String
-    description: String
+    firstName: String
+    lastName: String
+    email: String
+    password: String
+    confirmPassword: String
 }
 
 
@@ -20,8 +23,12 @@ type Query {
 }
 
 input PostInput{
-    title:String
-    description: String
+    
+    firstName: String
+    lastName: String
+    email: String
+    password: String
+    confirmPassword: String
 }
 
 type Mutation{

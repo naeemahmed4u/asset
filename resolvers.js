@@ -22,8 +22,8 @@ const resolvers = {
     Mutation: {
         createPost: async (parent, args, context, info) => {
 
-            const { title, description } = args.post;
-            const post = new Post({ title, description });
+            const { firstName, lastName, email, password, confirmPassword } = args.post;
+            const post = new Post({ firstName, lastName, email, password, confirmPassword });
             await post.save();
             return post;
         },
@@ -35,14 +35,26 @@ const resolvers = {
         },
         updatePost: async (parent, args, context, info) => {
             const { id } = args;
-            const { title, description } = args.post;
+            const { firstName, lastName, email, password, confirmPassword } = args.post;
             const updates={}
-            if (title!==undefined){
-                updates.title=title;
+            if (firstName!==undefined){
+                updates.firstName=firstName;
             }
             
-            if (description!==undefined){
-                updates.description=description;
+            if (lastName!==undefined){
+                updates.lastName=lastName;
+            }
+
+            if (email!==undefined){
+                updates.email=email;
+            }
+
+            if (password!==undefined){
+                updates.password=password;
+            }
+
+            if (confirmPassword!==undefined){
+                updates.confirmPassword=confirmPassword;
             }
 
 

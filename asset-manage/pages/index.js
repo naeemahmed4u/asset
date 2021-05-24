@@ -3,7 +3,8 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import Signup from './img/signup.png';
-import { Signup } from './components/Signup';
+// import { Signup } from './components/Signup';
+import ApolloProvider from './ApolloProvider';
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
         <div className="container mt-3">
           <div className="row">
             <div className="col-md-5">
-              <Signup />
+              <ApolloProvider />
             </div>
             <div className="col-md-7 my-auto">
               <Image className="img-fluid w-100" src="/signup.png" alt="Signup" width={300} height={300} />
